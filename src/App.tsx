@@ -21,12 +21,12 @@ function App(): JSX.Element {
                     alt="A picture of my dog Ada"
                 />
             </p>
-
             <ol>
                 <li>First thing</li>
                 <li>Another thing</li>
                 <li>A third item</li>
             </ol>
+            fahrenheitToCelius(28)
         </div>
     );
 }
