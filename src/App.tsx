@@ -5,10 +5,16 @@ import "./App.css";
 function App(): JSX.Element {
     return (
         <div className="App">
+<<<<<<< HEAD
             <Button onClick={() => console.log("Hello World!")}>
                 Log Hello World
             </Button>
             <header className="App-header">Theo COS420 Brucker</header>
+=======
+            <header className="App-header">
+                UM COS420 with React Hooks and TypeScript
+            </header>
+>>>>>>> upstream/task-arrays
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
