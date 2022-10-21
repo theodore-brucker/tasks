@@ -6,7 +6,7 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                UD COS420 with React Hooks and TypeScript
             </header>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
@@ -23,6 +23,9 @@ function App(): JSX.Element {
             <Button onClick={() => console.log("Hello World!")}>
                 Log Hello World
             </Button>
+            <ul>
+                <li> item one </li> <li>item two</li> <li>item three</li>
+            </ul>
         </div>
     );
 }

@@ -109,9 +109,22 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    const sum = addends.reduce((cur: number, num: number) => cur + num, 0);
+    if (addends.length == 0) {
+        return "0=0";
+    }
 
-    return sum;
+    const sum = addends.reduce((cur: number, num: number) => cur + num, 0);
+    const sumSize = String(sum).length;
+
+    let toStr = addends.map(String);
+    toStr = toStr.map((i) => "+" + i);
+    toStr.unshift(String(sum));
+    const stringed = toStr.join("");
+
+    const answer =
+        stringed.substring(0, sumSize) + "=" + stringed.substring(sumSize + 1);
+
+    return answer;
 }
 
 /**
@@ -124,5 +137,15 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const firstNegative = values.findIndex((num: number): boolean => num <= 0);
+    if (firstNegative == -1) {
+        const sum = values.reduce((cur: number, num: number) => cur + num, 0);
+        return [...values, sum];
+    }
+    const sumArr = values.slice(0, firstNegative);
+    const temp = [...values];
+    const sum = sumArr.reduce((cur: number, num: number) => cur + num, 0);
+    temp.splice(firstNegative + 1, 0, sum);
+
+    return temp;
 }
