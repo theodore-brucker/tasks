@@ -16,6 +16,8 @@ export function ChangeType(): JSX.Element {
     const [questionType, setQuestionType] = useState<QuestionType>(
         "short_answer_question"
     );
+
+    //Function to set questionType
     function swapType(): void {
         const newQuestionType = typeTransitions[questionType];
         setQuestionType(newQuestionType);
