@@ -5,16 +5,12 @@ interface NewDHValue {
     changeDH: () => void;
 }
 
-function Doubler({ changeDH }: NewDHValue): JSX.Element {
+function Double({ changeDH }: NewDHValue): JSX.Element {
     return <Button onClick={changeDH}>Double</Button>;
 }
 
-function Halfer({ changeDH }: NewDHValue): JSX.Element {
-    return (
-        <div>
-            <Button onClick={changeDH}>Half</Button>
-        </div>
-    );
+function Halve({ changeDH }: NewDHValue): JSX.Element {
+    return <Button onClick={changeDH}>Halve</Button>;
 }
 
 export function DoubleHalf(): JSX.Element {
@@ -28,8 +24,8 @@ export function DoubleHalf(): JSX.Element {
             <div>
                 The current value is: <span>{dhValue}</span>
             </div>
-            <Doubler changeDH={double}></Doubler>
-            <Halfer changeDH={half}></Halfer>
+            <Double changeDH={double}></Double>
+            <Halve changeDH={half}></Halve>
         </div>
     );
 }
